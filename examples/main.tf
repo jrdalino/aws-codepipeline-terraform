@@ -1,14 +1,14 @@
-module "codepeline" {
-  source = "git::https://github.com/jrdalino/aws-pipeline-terraform.git?ref=main"
+module "codepipeline" {
+  source = "git::https://github.com/jrdalino/aws-codepipeline-terraform.git?ref=main"
   # General
-  aws_region              = var.aws_region
-  aws_account             = var.aws_account
-  aws_role                = var.aws_role
+  aws_region  = var.aws_region
+  aws_account = var.aws_account
+  aws_role    = var.aws_role
 
   # Tagging
-  namespace               = var.namespace
-  bounded_context         = var.bounded_context
-  environment             = var.environment
+  namespace       = var.namespace
+  bounded_context = var.bounded_context
+  environment     = var.environment
 
   # Github Repository
   github_owner_name       = var.github_owner_name
@@ -18,7 +18,7 @@ module "codepeline" {
 
   # S3 Bucket for Artifacts
   s3_bucket_artifacts_name = var.s3_bucket_artifacts_name
- 
+
   # CodeBuild
   codebuild_service_role_name        = var.codebuild_service_role_name
   codebuild_service_role_policy_name = var.codebuild_service_role_policy_name
